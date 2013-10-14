@@ -4,6 +4,7 @@
  ** @author Ray WANG
  **/
  //Current support single channel only.
+
 IplImage* AvgFilter(IplImage* src, int nWindowSize) {
 	IplImage* image = cvCreateImage(cvGetSize(src), src->depth, 1);
 	int nRadius = (nWindowSize - 1) / 2;
@@ -13,6 +14,7 @@ IplImage* AvgFilter(IplImage* src, int nWindowSize) {
 			nSum = 0;
 			for(int k = -nRadius; k <= nRadius; ++k) {
 				for(int l = -nRadius; l <=nRadius; ++l) {
+
 					nSum += (uchar)(src->imageData[src->widthStep * (i + k) + j + l]);
 				}
 			}

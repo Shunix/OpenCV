@@ -8,7 +8,7 @@ uchar findMedium(uchar area[], int length) {
 			if(area[i] > area[i + 1]) {
 				uchar temp = area[i];
 				area[i] = area[i + 1];
-				area[i] = temp;
+				area[i + 1] = temp;
 			}
 		}
 	}
@@ -20,7 +20,7 @@ IplImage *mediumFilter(IplImage *src, int nWindowSize) {
 	IplImage* image = cvCreateImage(cvGetSize(src), src->depth, 1);
 	int nRadius = (nWindowSize - 1) / 2;
 	uchar *area = new uchar[nWindowSize * nWindowSize];
-	printf("%d\n", nRadius);
+	//printf("%d\n", nRadius);
 	memset(area, 0, nWindowSize * nWindowSize * sizeof(char));
 	for(int i = nRadius; i < src->height - nRadius; ++i) {
 		for(int j = nRadius; j < src->widthStep - nRadius; ++j) {
@@ -31,7 +31,7 @@ IplImage *mediumFilter(IplImage *src, int nWindowSize) {
 					temp++;
 				}
 			}
-			printf("%d\n", findMedium(area, nWindowSize * nWindowSize));
+			//printf("%d\n", findMedium(area, nWindowSize * nWindowSize));
 			image->imageData[image->widthStep * i + j] = findMedium(area, nWindowSize * nWindowSize);
 		}
 	}

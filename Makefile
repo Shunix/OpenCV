@@ -26,3 +26,5 @@ avgColor : avgColor.c
 	g++ avgColor.c -o avgColor `pkg-config --cflags --libs opencv` /usr/lib/libm.so.6
 mediumColor : mediumColor.c
 	g++ mediumColor.c -o mediumColor `pkg-config --cflags --libs opencv` /usr/lib/libm.so.6
+gaussianFilter : gaussianFilter.c
+	g++ gaussianFilter.c -o gaussianFilter `pkg-config --cflags --libs opencv` /usr/lib/libm.so.6
