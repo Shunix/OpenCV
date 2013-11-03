@@ -28,3 +28,5 @@ mediumColor : mediumColor.c
 	g++ mediumColor.c -o mediumColor `pkg-config --cflags --libs opencv` /usr/lib/libm.so.6
 gaussianFilter : gaussianFilter.c
 	g++ gaussianFilter.c -o gaussianFilter `pkg-config --cflags --libs opencv` /usr/lib/libm.so.6
+splitFinger : splitFinger.c
+	g++ splitFinger.c -o splitFinger `pkg-config --cflags --libs opencv` /usr/lib/libm.so.6
